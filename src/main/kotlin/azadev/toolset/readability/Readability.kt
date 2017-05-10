@@ -5,8 +5,9 @@ import org.jsoup.nodes.TextNode
 import org.jsoup.select.Elements
 
 
-class Readability
-{
+class Readability(
+		val bubblingRate: Float = 1.333f
+) {
 	private var bestScore = 0f
 	private var bestElem: Element? = null
 
@@ -14,6 +15,9 @@ class Readability
 
 
 	fun process(elems: Elements): Element? {
+		if (bestElem != null)
+			throw IllegalStateException("'process()' was called already; this method may be called only once for each instance of Readability")
+
 		elems.forEach { getScore(it) }
 		return result
 	}
@@ -29,7 +33,7 @@ class Readability
 					res += child.text().trim().length
 				}
 				child is Element && nodeName !in IGNORE_TAGS -> {
-					res += getScore(child) / 1.333f
+					res += getScore(child) / bubblingRate
 				}
 			}
 		}
