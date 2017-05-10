@@ -16,12 +16,26 @@ class MainTest
 
 		checkFile("100_visitportugal.html")
 		checkFile("101_visitportugal.html")
+
+		checkFile("200_habrahabr.html")
+
+		// Too many comments are here; Readability thinks it's the main content
+//		checkFile("201_habrahabr.html")
+
+		checkFile("202_meduza.html")
+
+
+		checkFile("300_wiki.html")
+		checkFile("301_wiki.html")
+
+		// Doubtful case
+//		checkFile("400_quora.html")
 	}
 
 
 	private fun checkFile(fileName: String) {
 		val element = processFile(fileName)!!
-		yes(fileName, element.hasAttr("readability-result"))
+		yes("$fileName: ${element.outerHtml().take(100)}", element.hasAttr("readability-result"))
 	}
 
 	private fun processFile(fileName: String): Element? {
