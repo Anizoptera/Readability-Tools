@@ -1,7 +1,6 @@
 package azadev.toolset.readability
 
-import org.jsoup.nodes.Element
-import org.jsoup.nodes.TextNode
+import org.jsoup.nodes.*
 import org.jsoup.select.Elements
 
 
@@ -21,6 +20,8 @@ class Readability(
 		elems.forEach { getScore(it) }
 		return result
 	}
+
+	fun process(doc: Document) = process(doc.children())
 
 
 	private fun getScore(elem: Element): Float {
