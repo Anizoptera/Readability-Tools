@@ -8,7 +8,7 @@ import org.junit.Assert.assertEquals as eq
 import org.junit.Assert.assertTrue as yes
 
 
-class MainTest
+class ReadabilityTest
 {
 	@Test fun basics() {
 		checkFile("001.html")
