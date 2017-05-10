@@ -14,22 +14,22 @@ class ReadabilityTest
 		checkFile("001.html")
 		checkFile("002.html")
 
-		checkFile("100_visitportugal.html")
-		checkFile("101_visitportugal.html")
+		checkFile("visitportugal_01.html")
+		checkFile("visitportugal_02.html")
 
-		checkFile("200_habrahabr.html")
+		checkFile("habrahabr_01.html")
 
 		// Too many comments are here; Readability thinks it's the main content
-//		checkFile("201_habrahabr.html")
+//		checkFile("habrahabr_02.html")
 
-		checkFile("202_meduza.html")
+		checkFile("meduza_01.html")
 
 
-		checkFile("300_wiki.html")
-		checkFile("301_wiki.html")
+		checkFile("wiki_01.html")
+		checkFile("wiki_02.html")
 
 		// Doubtful case
-//		checkFile("400_quora.html")
+//		checkFile("quora_01.html")
 	}
 
 
