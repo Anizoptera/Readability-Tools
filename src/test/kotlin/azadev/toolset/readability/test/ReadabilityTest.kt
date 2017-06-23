@@ -30,6 +30,12 @@ class ReadabilityTest
 		// Too many comments are here; Readability thinks it's the main content
 //		checkFile("habrahabr_02.html")
 
+		// https://habrahabr.ru/article/330482/
+		// Too many comments are here; Readability thinks it's the main content
+//		checkFile("habrahabr_mega-01.html")
+
+		// TODO: Try to add a coef that gives better score to those elements, which contain more text (relatively to others)
+
 
 		// https://meduza.io/shapito/2017/05/09/amerikanets-ustanovil-rekord-po-retvitam-radi-besplatnyh-naggetsov-da-on-sdelal-eto
 		checkFile("meduza_01.html")
